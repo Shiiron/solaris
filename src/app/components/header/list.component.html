@@ -1,0 +1,69 @@
+<button class="button button--add" (click)="personForm = !personForm">
+    <span class="button--icon">+</span>
+</button>
+
+<form *ngIf="personForm" (ngSubmit)="onSubmit()" class="person--form">
+    <div class="form-group">
+        <div>
+            <label for="name">Nom: </label>
+            <input type="text" name="name" [(ngModel)]="newPerson.name" />
+        </div>
+
+        <div>
+            <label for="lastName">Nom de famille: </label>
+            <input type="text" name="lastName" [(ngModel)]="newPerson.lastName" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="age">Age: </label>
+        <input type="number" name="age"[(ngModel)]="newPerson.age" />
+    </div>
+
+    <div class="form-group">
+        <label for="city">Ville: </label>
+        <input type="text" name="city"[(ngModel)]="newPerson.city"/>
+    </div>
+
+    <div class="form-group">
+        <label for="zipCode">Code postal: </label>
+        <input type="text" name="zipCode" [(ngModel)]="newPerson.zipCode" />
+    </div>
+
+    <input type="submit" value="Ajouter" class="button button--submit person--form-submit"/>
+</form>
+
+<ul class="person--list">
+    <li class="person--item">
+        <div><b>Nom</b></div>
+
+        <div><b>Age</b></div>
+
+        <div><b>Ville</b></div>
+
+        <div><b>Code postal</b></div>
+
+        <div><b>Actions</b></div>
+    </li>
+    <li *ngFor="let person of data; let index = index;" class="person--item">
+        <div>
+            {{person.name}} {{person.lastName}}
+        </div>
+
+        <div>
+            {{person.age}}
+        </div>
+
+        <div>
+            {{person.city}}
+        </div>
+
+        <div>
+            {{person.zipCode}}
+        </div>
+
+        <div>
+            <button (click)="removePerson(index)" class="button button--delete">Supprimer</button>
+        </div>
+    </li>
+</ul>

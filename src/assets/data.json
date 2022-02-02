@@ -1,0 +1,8 @@
+{
+    "data": [
+        { "name": "loris", "lastName": "Puech", "age": 30, "city": "Mende", "zipCode": "48000" },
+        { "name": "Sylvie", "lastName": "Legendre", "age": 35, "city": "Paris", "zipCode": "75000" },
+        { "name": "Gérard", "lastName": "Moineau", "age": 60, "city": "Florac", "zipCode": "48600" },
+        { "name": "Jean", "lastName": "Loiseau", "age": 20, "city": "Grenoble", "zipCode": "38000" }
+    ]
+}
